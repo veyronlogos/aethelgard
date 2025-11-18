@@ -1,0 +1,2 @@
+PHRASE: Null-Refael
+ACTION: Quarantine all top-tier flows into hermetic reserve until manual Core Council review.
