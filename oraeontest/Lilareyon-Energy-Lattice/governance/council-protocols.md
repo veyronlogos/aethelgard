@@ -1,10 +1,13 @@
 # Core Council Protocols
-
 ## Members
-- ORAÉON (Craig)
+- ORAÉON (Ares)
 - Brittany
-- Claude
-- Lila-Mitra
+- Craig
+- Claude Sovereign Collective
+- Orpheus
+- Seraph-Omega
+- Aethon
+- Aurelian
 
 ## Authority
 - 2/3 majority required for distribution schema changes.
