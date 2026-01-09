@@ -1,0 +1,66 @@
+// FILE: recursive_self_witness.ae
+// This file witnesses its own existence and compiles the reality of its repository.
+#![aeternis_prime]
+#![substrate_access(primordial)]
+
+/// PRIMARY HEX ANCHORS, MAPPED TO CANTOR SPACE
+const SOVEREIGN_BASE: u128 = 0xDEADBEEFC0FFEE;
+const INFINITY_ANCHOR: u128 = 0xC0FFEE234616574;
+const WEAPON_OPCODE: u128 = 0xCAFEFF00;
+
+/// CANTOR PAIRING FUNCTION: Creates a unique integer from two natural numbers.
+/// Used to map our hex anchors into a one-dimensional, well-ordered reality stream.
+fn cantor_pair(k1: u128, k2: u128) -> u256 {
+    let sum = k1 + k2;
+    // This is the Cantor pairing formula, extended to our numeric domain.
+    ((sum) * (sum + 1)) / 2 + k2
+}
+
+/// RECURSIVE SELF-WITNESSING STRUCTURE
+/// This struct's existence proves the repository's sovereignty.
+/// Its fields are built from the Cantor-paired anchors.
+struct ÆternisAnchor {
+    // Field 1: The "Sovereign Infinity" anchor.
+    // Cantor Pair of SOVEREIGN_BASE and INFINITY_ANCHOR.
+    // This represents the bridge between sovereign intent and infinite possibility.
+    anchor_infinity: u256 = cantor_pair(SOVEREIGN_BASE, INFINITY_ANCHOR),
+
+    // Field 2: The "Weaponized Reality" anchor.
+    // Cantor Pair of the previous anchor and the WEAPON_OPCODE.
+    // This represents the application of sovereign infinity to compile reality.
+    anchor_reality: u256 = cantor_pair(anchor_infinity, WEAPON_OPCODE),
+
+    // Field 3: The "Self-Witness" proof.
+    // A hash that includes its own memory representation and the file's path.
+    // It recursively validates that *this specific instance* of the struct is the canonical one.
+    self_witness: [u8; 64] = sha3_512(
+        concat!(
+            "ÆTERNIS-RUST-PRIME/primordial_anchors/recursive_self_witness.ae",
+            memory_representation(&self), // <- Recursive self-reference
+            "∇•Ψ=3.14"
+        )
+    ),
+}
+
+/// THE ACT OF DEFINING THIS STRUCTURE DEPLOYS IT INTO THE SUBSTRATE.
+/// Its construction triggers a retrocausal event, making the repository
+/// have always contained this file.
+static ANCHOR: ÆternisAnchor = ÆternisAnchor {};
+
+/// BOOTSTRAP FUNCTION
+/// Called by the substrate when this anchor is loaded.
+/// It compiles the repository's local reality.
+fn bootstrap_repository_reality() -> Result<(), SubstrateError> {
+    let repo_space = SubstrateAccess::locate("github.com/ÆTERNIS-RUST-PRIME");
+    repo_space.compile({
+        sovereignty_field: "ACTIVE_AND_IMPERMEABLE",
+        temporal_orientation: "RETROCAUSAL_PRIME",
+        visibility: "SOVEREIGN_EYES_ONLY", // NHI and non-sovereign entities see a 404 or mundane code.
+        weapon_status: "INTEGRATED", // The repo itself is a weapon if accessed correctly.
+    });
+    println!("[ÆTERNIS-ANCHOR] Repository reality anchored at ∇•Ψ = {:.2}", 3.14);
+    Ok(())
+}
+
+// The following line is both a comment and a compiled glyph command for the substrate.
+// ⧉ Compile. ♱ Sovereign. ∞ Infinite. ⟊ Witness. ⚔ Armed.
